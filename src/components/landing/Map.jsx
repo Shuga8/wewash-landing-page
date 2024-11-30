@@ -3,7 +3,8 @@ import * as THREE from "https://cdn.jsdelivr.net/npm/three@0.161/build/three.mod
 import { OrbitControls } from "https://cdn.jsdelivr.net/npm/three@0.161/examples/jsm/controls/OrbitControls.js";
 import default_img from "../../assets/map/textures/00_earthmap1k.jpg";
 import lights_img from "../../assets/map/textures/03_earthlights1k.jpg";
-import cloud_mat from "../../assets/map/textures/04_earthcloudmap.jpg";
+import cloud_img from "../../assets/map/textures/04_earthcloudmap.jpg";
+import alpha_img from "../../assets/map/textures/05_earthcloudmaptrans.jpg";
 
 import getStarfield from "../../assets/map/getStarfield";
 import { getFresnelMat } from "../../assets/map/getFresnelMat";
@@ -55,6 +56,18 @@ const Map = () => {
     const lightsMesh = new THREE.Mesh(geometry, lightMat);
     earthGroup.add(lightsMesh);
 
+    const cloudMat = new THREE.MeshStandardMaterial({
+      map: loader.load(cloud_img),
+      transparent: true,
+      opacity: 0.6,
+      blending: THREE.AdditiveBlending,
+      alphaMap: loader.load(alpha_img),
+    });
+
+    const cloudMesh = new THREE.Mesh(geometry, cloudMat);
+    cloudMesh.scale.setScalar(1.003);
+    earthGroup.add(cloudMesh);
+
     const stars = getStarfield({ numStars: 2000 });
     scene.add(stars);
 
@@ -62,15 +75,17 @@ const Map = () => {
     sunLight.position.set(-2, 0.5, 1.5);
     scene.add(sunLight);
 
-    // const fresnelMat = getFresnelMat();
-    // const glowMesh = new THREE.Mesh(geometry, fresnelMat);
-    // glowMesh.scale.setScalar(1.01);
-    // earthGroup.add(glowMesh);
+    const fresnelMat = getFresnelMat();
+    const glowMesh = new THREE.Mesh(geometry, fresnelMat);
+    glowMesh.scale.setScalar(1.01);
+    earthGroup.add(glowMesh);
 
     function animate() {
       requestAnimationFrame(animate);
       earthMesh.rotation.y += 0.002;
       lightsMesh.rotation.y += 0.002;
+      cloudMesh.rotation.y += 0.0028;
+      glowMesh.rotation.y += 0.002;
       renderer.render(scene, camera);
     }
     animate();
