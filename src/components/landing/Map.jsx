@@ -2,6 +2,8 @@ import React, { useEffect } from "react";
 import * as THREE from "https://cdn.jsdelivr.net/npm/three@0.161/build/three.module.js";
 import { OrbitControls } from "https://cdn.jsdelivr.net/npm/three@0.161/examples/jsm/controls/OrbitControls.js";
 import default_img from "../../assets/map/textures/00_earthmap1k.jpg";
+import lights_img from "../../assets/map/textures/03_earthlights1k.jpg";
+import cloud_mat from "../../assets/map/textures/04_earthcloudmap.jpg";
 
 import getStarfield from "../../assets/map/getStarfield";
 import { getFresnelMat } from "../../assets/map/getFresnelMat";
@@ -21,14 +23,20 @@ const Map = () => {
 
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(75, w / h, 0.1, 1000);
-    camera.position.z = 2.5;
+    camera.position.z = 3;
 
     const renderer = new THREE.WebGLRenderer({ antialias: true });
     renderer.setSize(w, h);
     mapDiv.appendChild(renderer.domElement);
     new OrbitControls(camera, renderer.domElement);
-    // renderer.toneMapping = THREE.ACESFilmicToneMapping;
-    // renderer.outputColorSpace = THREE.LinearSRGBColorSpace;
+    renderer.toneMapping = THREE.ACESFilmicToneMapping;
+    renderer.outputColorSpace = THREE.LinearSRGBColorSpace;
+
+    const earthGroup = new THREE.Group();
+    earthGroup.rotation.z = (-23.4 * Math.PI) / 180;
+    scene.add(earthGroup);
+
+    new OrbitControls(camera, renderer.domElement);
 
     const detail = 12;
     const loader = new THREE.TextureLoader();
@@ -37,34 +45,36 @@ const Map = () => {
       map: loader.load(default_img),
     });
     const earthMesh = new THREE.Mesh(geometry, material);
-    scene.add(earthMesh);
+    earthGroup.add(earthMesh);
 
-    const earthGroup = new THREE.Group();
-    earthGroup.rotation.z = (-23.4 * Math.PI) / 180;
-    scene.add(earthGroup);
-    new OrbitControls(camera, renderer.domElement);
+    const lightMat = new THREE.MeshBasicMaterial({
+      map: loader.load(lights_img),
+      blending: THREE.AdditiveBlending,
+    });
+
+    const lightsMesh = new THREE.Mesh(geometry, lightMat);
+    earthGroup.add(lightsMesh);
 
     const stars = getStarfield({ numStars: 2000 });
     scene.add(stars);
 
     const sunLight = new THREE.DirectionalLight(0xffffff, 2.0);
-    sunLight.position.set(0, 0, 8.5);
+    sunLight.position.set(-2, 0.5, 1.5);
     scene.add(sunLight);
 
-    const fresnelMat = getFresnelMat();
-    const glowMesh = new THREE.Mesh(geometry, fresnelMat);
-    glowMesh.scale.setScalar(1.01);
-    earthGroup.add(glowMesh);
+    // const fresnelMat = getFresnelMat();
+    // const glowMesh = new THREE.Mesh(geometry, fresnelMat);
+    // glowMesh.scale.setScalar(1.01);
+    // earthGroup.add(glowMesh);
 
     function animate() {
       requestAnimationFrame(animate);
-      earthMesh.rotation.x += 0.01;
-      earthMesh.rotation.y += 0.01;
+      earthMesh.rotation.y += 0.002;
+      lightsMesh.rotation.y += 0.002;
       renderer.render(scene, camera);
     }
     animate();
 
-    // Cleanup on component unmount
     return () => {
       mapDiv.removeChild(renderer.domElement);
     };
