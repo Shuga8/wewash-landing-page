@@ -17,13 +17,11 @@ header {
   position: absolute;
   top: 0;
   left: 0;
+  z-index: 30;
 }
 
-.hero {
-  background: linear-gradient(to bottom, #e6edf8, #e1ecfb, #eef4fd, #d8e5f7);
-}
 .hero .title {
-  background: linear-gradient(to bottom, #c0c0c0 5%, #1b3aa8 35%);
+  background: linear-gradient(to bottom, #c0c0c0 5%, #fff 35%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -38,7 +36,7 @@ header {
           user-select: none;
 }
 .hero .sub-title {
-  background: linear-gradient(to right, #152a79, #0c1b4f);
+  background: linear-gradient(to right, #c0c0c0, #fff);
   background-clip: text;
   background-clip: text;
   -webkit-background-clip: text;
@@ -47,17 +45,4 @@ header {
   -moz-text-fill-color: transparent;
   -ms-background-clip: text;
   -ms-text-fill-color: transparent;
-}
-
-@media (max-width: 640px) {
-  .hero .title {
-    background: linear-gradient(to bottom, #1f41be 5%, #1b3aa8 35%);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    -moz-background-clip: text;
-    -moz-text-fill-color: transparent;
-    -ms-background-clip: text;
-    -ms-text-fill-color: transparent;
-  }
 }/*# sourceMappingURL=App.css.map */

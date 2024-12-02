@@ -19,12 +19,40 @@ const Map = () => {
       return;
     }
 
-    const w = mapDiv.scrollWidth;
-    const h = mapDiv.scrollHeight;
+    const { width: w, height: h } = mapDiv.getBoundingClientRect();
 
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(75, w / h, 0.1, 1000);
-    camera.position.z = 3;
+    camera.position.z = 2.5;
+
+    //   const gradientShader = new THREE.ShaderMaterial({
+    //     uniforms: {
+    //       color1: { value: new THREE.Color(0x1e3a8a) },
+    //       color2: { value: new THREE.Color(0x2563eb) },
+    //       color3: { value: new THREE.Color(0x3b82f6) },
+    //     },
+    //     vertexShader: `
+    //   varying vec2 vUv;
+    //   void main() {
+    //     vUv = uv;
+    //     gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+    //   }
+    // `,
+    //     fragmentShader: `
+    //   uniform vec3 color1;
+    //   uniform vec3 color2;
+    //   uniform vec3 color3;
+    //   varying vec2 vUv;
+    //   void main() {
+    //     gl_FragColor = vec4(mix(color1, mix(color2, color3, vUv.y), vUv.y), 1.0);
+    //   }
+    // `,
+    //   });
+
+    //   const planeGeometry = new THREE.PlaneGeometry(w, h);
+    //   const gradientPlane = new THREE.Mesh(planeGeometry, gradientShader);
+    //   gradientPlane.position.z = -5; // Place behind the scene
+    //   scene.add(gradientPlane);
 
     const renderer = new THREE.WebGLRenderer({ antialias: true });
     renderer.setSize(w, h);
@@ -36,8 +64,6 @@ const Map = () => {
     const earthGroup = new THREE.Group();
     earthGroup.rotation.z = (-23.4 * Math.PI) / 180;
     scene.add(earthGroup);
-
-    new OrbitControls(camera, renderer.domElement);
 
     const detail = 12;
     const loader = new THREE.TextureLoader();
@@ -90,31 +116,27 @@ const Map = () => {
     }
     animate();
 
+    function handleWindowResize() {
+      const { width, height } = mapDiv.getBoundingClientRect();
+      camera.aspect = width / height;
+      camera.updateProjectionMatrix();
+      renderer.setSize(width, height);
+    }
+    window.addEventListener("resize", handleWindowResize);
+
     return () => {
       mapDiv.removeChild(renderer.domElement);
+      window.removeEventListener("resize", handleWindowResize);
     };
   }, []);
 
   return (
-    <>
-      <style
-        dangerouslySetInnerHTML={{
-          __html: `
-            * {
-              margin: 0 !important;
-            }
-          `,
-        }}
-      />
-      <div className="relative w-[100vw] h-[100vh]">
-        <div
-          className="w-[100%] h-[100%] absolute z-[2] top-0 left-0"
-          id="map"
-        ></div>
-
-        {/* <div className="overlay absolute z-[1000] w-[100%] h-[100%] top-0 left-0 bg-black opacity-25"></div> */}
-      </div>
-    </>
+    <div className="relative w-[100vw] h-[100vh]">
+      <div
+        className="w-[100%] h-[100%] absolute z-[2] top-0 left-0"
+        id="map"
+      ></div>
+    </div>
   );
 };
 
