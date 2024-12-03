@@ -12,6 +12,11 @@
 
 body {
   position: relative;
+
+  &::-webkit-scrollbar {
+    width: 0px;
+    height: 2px;
+  }
 }
 
 header {

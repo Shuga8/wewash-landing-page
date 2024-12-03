@@ -32,7 +32,7 @@ const Navbar = () => {
         </Link>
 
         <Link
-          to={"/product"}
+          to={"/products"}
           className="text-[14px] text-white hover:text-primary-500"
         >
           Product

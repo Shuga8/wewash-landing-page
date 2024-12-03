@@ -6,6 +6,7 @@ const Home = () => {
     <>
       <Navbar />
       <Hero />
+      <div className="w-full h-[1500px]"></div>
     </>
   );
 };

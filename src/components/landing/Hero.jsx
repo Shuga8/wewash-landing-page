@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import Map from "./Map";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
   useEffect(() => {
@@ -35,6 +36,18 @@ const Hero = () => {
             transactions, and provide convenient, customer-focused real-life
             experiences.
           </h2>
+
+          <div className="action-links flex flex-row gap-x-5">
+            <Link className="text-[13px] text-black bg-white px-[18px] py-[9px] font-[550] rounded-lg">
+              <span>Contact Us</span>
+            </Link>
+            <Link
+              to={"/products"}
+              className="text-[13px] text-white px-[18px] py-[9px] font-[550] bg-white bg-opacity-20 ease-in-out duration-300 transition-colors rounded-lg hover:bg-transparent hover:transition-colors hover:ease-in-out hover:duration-300"
+            >
+              <span>Explore Products</span>
+            </Link>
+          </div>
         </div>
       </div>
     </>
