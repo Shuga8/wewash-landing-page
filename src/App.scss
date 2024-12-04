@@ -40,7 +40,6 @@ header {
     -ms-text-fill-color: transparent;
     font-weight: 650;
     line-height: 1.1;
-    user-select: none;
   }
 
   .sub-title {
@@ -56,5 +55,53 @@ header {
   }
 }
 
+.scroll-container {
+  overflow: hidden;
+  position: relative;
+
+  /* Add pseudo-elements for the white inner shadow */
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100px; /* Adjust as needed for shadow size */
+    pointer-events: none; /* Ensure no interference with interactions */
+    z-index: 2; /* Keep it above the scrolling content */
+  }
+
+  &::before {
+    left: 0;
+    background: linear-gradient(to right, white, rgba(255, 255, 255, 0));
+  }
+
+  &::after {
+    right: 0;
+    background: linear-gradient(to left, white, rgba(255, 255, 255, 0));
+  }
+
+  > ul {
+    animation: scroll 20s linear infinite;
+    position: relative;
+    z-index: 1; /* Keep the content below the pseudo-elements */
+  }
+
+  /* Blur elements as they reach the edges */
+  > ul li {
+    transition: filter 0.3s; /* Smooth transition for the blur effect */
+  }
+
+  &:hover > ul li {
+    filter: blur(5px);
+  }
+}
+
 @media (max-width: 640px) {
+}
+
+@keyframes scroll {
+  to {
+    transform: translateX(calc(-100% - 96px));
+  }
 }
