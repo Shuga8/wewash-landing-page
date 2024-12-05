@@ -10,6 +10,10 @@
   font-family: "Inter", sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   position: relative;
 
@@ -92,11 +96,18 @@ header {
     transition: filter 0.3s; /* Smooth transition for the blur effect */
   }
 
-  &:hover > ul li {
-    filter: blur(5px);
-  }
+  // &:hover > ul li {
+  //   filter: blur(5px);
+  // }
 }
 
+.about-section {
+  > ul {
+    animation: scroll 30s linear infinite;
+    position: relative;
+    z-index: 1; /* Keep the content below the pseudo-elements */
+  }
+}
 @media (max-width: 640px) {
 }
 

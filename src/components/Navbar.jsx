@@ -53,7 +53,7 @@ const Navbar = () => {
         </Link>
       </nav>
 
-      <div className="toggle-menu block base:hidden text-white font-[550] text-[24px] cursor-pointer py-[10px] px-[14px] hover:bg-gray-100 transition-colors ease-in-out duration-300 hover:transition-colors hover:duration-300 hover:ease-in-out ">
+      <div className="toggle-menu block base:hidden text-white font-[550] text-[24px] cursor-pointer py-[10px] px-[14px] hover:bg-stone-800 hover:bg-opacity-50 transition-colors ease-in-out duration-300 hover:transition-colors hover:duration-300 hover:ease-in-out ">
         <HiOutlineMenuAlt3 />
       </div>
     </header>

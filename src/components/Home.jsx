@@ -1,5 +1,5 @@
 import React from "react";
-import { Hero, Navbar } from "./index";
+import { Hero, Navbar, About } from "./index";
 import flutterwave from "../assets/flutterwave.png";
 import visa from "../assets/visa.png";
 import mastarcard from "../assets/mastarcard.png";
@@ -13,8 +13,7 @@ const Home = () => {
     <>
       <Navbar />
       <Hero />
-
-      <div className="scroll-container flex flex-row mx-auto w-[100%] gap-x-24 px-[14px] py-[30px] bg-white">
+      <div className="scroll-container flex flex-row mx-auto w-[100%] gap-x-14 md:gap-x-24 px-[14px] py-[30px] bg-white">
         <ul className="scroll-ell flex flex-row gap-x-24 place-items-center flex-shrink-0">
           <li>
             <img
@@ -123,6 +122,9 @@ const Home = () => {
           </li>
         </ul>
       </div>
+      <About />
+
+      <section className="products bg-[#0A0A0A] w-full py-10 base:py-14 md:py-20 px-3 base:px-12 md:px-24"></section>
     </>
   );
 };
