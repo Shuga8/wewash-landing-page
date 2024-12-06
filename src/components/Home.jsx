@@ -122,8 +122,8 @@ const Home = () => {
           </li>
         </ul>
       </div>
-      <About />
 
+      <About />
       <section className="products bg-[#0A0A0A] w-full py-10 base:py-14 md:py-20 px-3 base:px-12 md:px-24"></section>
     </>
   );

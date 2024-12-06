@@ -26,28 +26,28 @@ const Navbar = () => {
       <nav className="navbar base:flex gap-x-12 hidden" id="navbar">
         <Link
           to={"/"}
-          className="text-[14px] text-white hover:text-primary-500"
+          className="text-[15px] font-[650] text-white hover:text-primary-500"
         >
           Home
         </Link>
 
         <Link
           to={"/products"}
-          className="text-[14px] text-white hover:text-primary-500"
+          className="text-[15px] font-[650] text-white hover:text-primary-500"
         >
           Product
         </Link>
 
         <Link
           to={"/#about"}
-          className="text-[14px] text-white hover:text-primary-500"
+          className="text-[15px] font-[650] text-white hover:text-primary-500"
         >
           About
         </Link>
 
         <Link
           to={"/#contact"}
-          className="text-[14px] text-white hover:text-primary-500"
+          className="text-[15px] font-[650] text-white hover:text-primary-500"
         >
           Contact
         </Link>
