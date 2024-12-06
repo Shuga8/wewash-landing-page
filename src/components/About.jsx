@@ -157,13 +157,15 @@ const About = () => {
         </div>
       </div>
 
-      <section className="about-section w-full py-10 h-[500px] relative overflow-hidden flex flex-row gap-x-14 md:gap-x-24">
+      <section className="products bg-[#0A0A0A] w-full py-10 base:py-14 md:py-20 px-3 base:px-12 md:px-24"></section>
+
+      <section className="about-section w-full h-[500px] relative overflow-hidden flex flex-row gap-x-14 md:gap-x-24">
         <ul className="img min-w-full h-full">
           <li>
             <img
               src={shaded_img}
               alt="Shaded"
-              className="w-full h-[500px] object-fill"
+              className="w-full h-[500px] object-cover"
             />
           </li>
         </ul>
@@ -173,7 +175,7 @@ const About = () => {
             <img
               src={shaded_img}
               alt="Shaded"
-              className="w-full h-[500px] object-fill"
+              className="w-full h-[500px] object-cover"
             />
           </li>
         </ul>
