@@ -159,13 +159,13 @@ const About = () => {
 
       <section className="products bg-[#0A0A0A] w-full py-10 base:py-14 md:py-20 px-3 base:px-12 md:px-24"></section>
 
-      <section className="about-section w-full h-[500px] relative overflow-hidden flex flex-row gap-x-14 md:gap-x-24">
+      <section className="about-section w-full h-[500px] relative overflow-hidden flex flex-row gap-x-12 md:gap-x-24">
         <ul className="img min-w-full h-full">
           <li>
             <img
               src={shaded_img}
               alt="Shaded"
-              className="w-full h-[500px] object-cover"
+              className="w-full h-[500px] object-fill base:object-cover"
             />
           </li>
         </ul>
@@ -175,15 +175,47 @@ const About = () => {
             <img
               src={shaded_img}
               alt="Shaded"
-              className="w-full h-[500px] object-cover"
+              className="w-full h-[500px] object-fill base:object-cover "
             />
           </li>
         </ul>
 
-        <div className="content w-full h-full flex flex-col justify-center  items-center absolute z-[3] top-0 left-0 bg-white bg-opacity-80 base:py-14 md:py-20 px-3 base:px-12 md:px-24 gap-y-16">
+        <ul className="img min-w-full h-full">
+          <li>
+            <img
+              src={shaded_img}
+              alt="Shaded"
+              className="w-full h-[500px] object-fill base:object-cover"
+            />
+          </li>
+        </ul>
+
+        <div className="content w-full h-full flex flex-col justify-center  items-center absolute z-[3] top-0 left-0 bg-white bg-opacity-80 base:py-14 md:py-20 px-6 base:px-12 md:px-24 gap-y-6">
           <p className="text-center px-4 py-[4px] text-primary-600 bg-black bg-opacity-10 font-[650] rounded-lg text-[13px] backdrop:blur-[2px]">
             For washers and individuals
           </p>
+
+          <h3 className="text-center text-black text-[1.4rem] font-[550]">
+            Seamless Payments
+          </h3>
+
+          <p className="text-slate-700 text-center max-w-[800px] leading-[1.9]">
+            We make it easy for you to receive payments by converting digital
+            currencies into your preferred local currency. Enjoy a secure,
+            hassle-free, and dependable payment process tailored to your needs.
+          </p>
+
+          <div className="action-links flex flex-row gap-x-5">
+            <Link className="text-[13px] text-white bg-primary-600 px-[18px] py-[9px] font-[550] rounded-lg">
+              <span>Contact Us</span>
+            </Link>
+            <Link
+              to={""}
+              className="text-[13px] text-white px-[18px] py-[9px] font-[550] bg-black bg-opacity-50 ease-in-out duration-300 transition-colors rounded-lg hover:bg-transparent hover:transition-colors hover:ease-in-out hover:duration-300"
+            >
+              <span>Learn More</span>
+            </Link>
+          </div>
         </div>
       </section>
     </>
