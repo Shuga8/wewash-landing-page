@@ -2,6 +2,8 @@ import React from "react";
 import shaded_img from "../assets/shaded.png";
 import wash_one from "../assets/wash_one.webp";
 import wash_two from "../assets/wash_two.webp";
+import dashboard_slant from "../assets/Dashboard-14-Iphone-Pro-MockupA-.png";
+import checkout_straight from "../assets/Checkout-14-Iphone-Pro-MockupB-.png";
 import { IoCheckmark } from "react-icons/io5";
 import { Link } from "react-router-dom";
 
@@ -79,7 +81,12 @@ const About = () => {
           </div>
 
           <div className="block h-full">
-            <img src={wash_one} alt="" className="w-full h-full object-fill" />
+            <img
+              src={wash_one}
+              alt=""
+              className="w-full h-full object-fill"
+              fetchPriority="high"
+            />
           </div>
         </div>
 
@@ -152,12 +159,174 @@ const About = () => {
           </div>
 
           <div className="block h-full">
-            <img src={wash_two} alt="" className="w-full h-full object-fill" />
+            <img
+              src={wash_two}
+              alt=""
+              className="w-full h-full object-fill"
+              fetchPriority="high"
+            />
           </div>
         </div>
       </div>
 
-      <section className="products bg-[#0A0A0A] w-full py-10 base:py-14 md:py-20 px-3 base:px-12 md:px-24"></section>
+      <section className="products bg-[#0A0A0A] w-full py-10 base:py-14 md:py-20 px-3 base:px-12 md:px-24">
+        <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-y-10 gap-x-24 md:justify-between mb-10">
+          <div className="block">
+            <p className="text-center w-fit px-4 py-[4px] text-purple-600 bg-white bg-opacity-10 font-[650] rounded-lg text-[13px] backdrop:blur-[2px]">
+              For Washers And Individuals
+            </p>
+
+            <h2 className="text-white font-[650] text-[1rem] md:text-[1.4rem] my-[20px] flex flex-row gap-x-3">
+              Mobile App
+            </h2>
+
+            <p className="text-stone-300 text-[16px]">
+              Easily manage your car wash payments and earnings. Accept payments
+              through multiple platforms and withdraw your earnings directly to
+              your bank account—all in one app.
+            </p>
+
+            <ul className="py-8 px-3 grid grid-cols-2 max-w-[400px]">
+              <li className="flex flex-row gap-x-[10px] place-items-center my-[10px]">
+                <IoCheckmark className="text-green-500 text-[26px]" />
+                <span className="text-slate-300 text-[15px] font-[550]">
+                  Accept Payments
+                </span>
+                {/* <span className="text-slate-900 text-[15px]">
+                  Manage your services and schedule effortlessly.
+                </span> */}
+              </li>
+
+              <li className="flex flex-row gap-x-[10px] place-items-center my-[10px]">
+                <IoCheckmark className="text-green-500 text-[26px]" />
+                <span className="text-slate-300 text-[15px] font-[550]">
+                  Withdraw Earnings
+                </span>
+                {/* <span className="text-slate-900 text-[15px]">
+                  Stay informed with live notifications for bookings and
+                  payments.
+                </span> */}
+              </li>
+
+              <li className="flex flex-row gap-x-[10px] place-items-center my-[10px]">
+                <IoCheckmark className="text-green-500 text-[26px]" />
+                <span className="text-slate-300 text-[15px] font-[550]">
+                  Easy Bank Transfers
+                </span>
+                {/* <span className="text-slate-900 text-[15px]">
+                  Your business and customer data are safe with us.
+                </span> */}
+              </li>
+
+              <li className="flex flex-row gap-x-[10px] place-items-center my-[10px]">
+                <IoCheckmark className="text-green-500 text-[26px]" />
+                <span className="text-slate-300 text-[15px] font-[550] text-nowrap">
+                  One-Time Funding
+                </span>
+                {/* <span className="text-slate-900 text-[15px] text-wrap">
+                  Access our tools via a user-friendly dashboard or integrate
+                  with your existing systems.
+                </span> */}
+              </li>
+            </ul>
+
+            <Link
+              to={""}
+              className="px-[17px] py-[10px] text-white bg-primary-700 text-[15px] font-[550] border border-transparent hover:border hover:border-primary-600 ease-in-out duration-300 transition-[border] rounded-lg"
+            >
+              Download App
+            </Link>
+          </div>
+
+          <div className="flex h-full justify-center items-center drop-shadow-md">
+            <img
+              src={dashboard_slant}
+              alt=""
+              className="w-full h-full object-contain"
+              fetchPriority="high"
+            />
+          </div>
+        </div>
+
+        <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-y-10 gap-x-24 md:justify-between mb-10">
+          <div className="block">
+            <p className="text-center w-fit px-4 py-[4px] text-purple-600 bg-white bg-opacity-10 font-[650] rounded-lg text-[13px] backdrop:blur-[2px]">
+              For Individuals
+            </p>
+
+            <h2 className="text-white font-[650] text-[1rem] md:text-[1.4rem] my-[20px] flex flex-row gap-x-3">
+              Accept Payments
+            </h2>
+
+            <p className="text-stone-300 text-[16px]">
+              Streamline your car wash transactions by accepting payments
+              through Paystack, Flutterwave, Visa, Mastercard, and bank
+              transfers. Get funds directly into your bank account with ease and
+              reliability.
+            </p>
+
+            <ul className="py-8 px-3 grid grid-cols-2 max-w-[600px]">
+              <li className="flex flex-row gap-x-[10px] place-items-center my-[10px]">
+                <IoCheckmark className="text-green-500 text-[26px]" />
+                <span className="text-slate-300 text-[15px] font-[550]">
+                  Accept Payments via Paystack & Flutterwave
+                </span>
+                {/* <span className="text-slate-900 text-[15px]">
+                  Manage your services and schedule effortlessly.
+                </span> */}
+              </li>
+
+              <li className="flex flex-row gap-x-[10px] place-items-center my-[10px]">
+                <IoCheckmark className="text-green-500 text-[26px]" />
+                <span className="text-slate-300 text-[15px] font-[550]">
+                  Secure Transactions with Visa & Mastercard
+                </span>
+                {/* <span className="text-slate-900 text-[15px]">
+                  Stay informed with live notifications for bookings and
+                  payments.
+                </span> */}
+              </li>
+
+              <li className="flex flex-row gap-x-[10px] place-items-center my-[10px]">
+                <IoCheckmark className="text-green-500 text-[26px]" />
+                <span className="text-slate-300 text-[15px] font-[550]">
+                  Direct Bank Transfers
+                </span>
+                {/* <span className="text-slate-900 text-[15px]">
+                  Your business and customer data are safe with us.
+                </span> */}
+              </li>
+
+              <li className="flex flex-row gap-x-[10px] place-items-center my-[10px]">
+                <IoCheckmark className="text-green-500 text-[26px]" />
+                <span className="text-slate-300 text-[15px] font-[550] text-nowrap">
+                  Simplify Your Earnings
+                </span>
+                {/* <span className="text-slate-900 text-[15px] text-wrap">
+                  Access our tools via a user-friendly dashboard or integrate
+                  with your existing systems.
+                </span> */}
+              </li>
+            </ul>
+
+            <Link
+              to={""}
+              className="px-[17px] py-[10px] text-primary-600 bg-transparent text-[15px] font-[550] border border-transparent hover:border hover:border-primary-600 ease-in-out duration-300 transition-[border] rounded-lg"
+            >
+              Learn More
+            </Link>
+          </div>
+
+          <div className="flex h-full justify-center items-center drop-shadow-md">
+            <img
+              src={checkout_straight}
+              alt=""
+              className="w-full h-[500px] object-contain"
+              fetchPriority="high"
+            />
+          </div>
+        </div>
+      </section>
 
       <section className="about-section w-full h-[500px] relative overflow-hidden flex flex-row gap-x-12 md:gap-x-24">
         <ul className="img min-w-full h-full">
