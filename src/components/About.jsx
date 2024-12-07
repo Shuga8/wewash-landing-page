@@ -211,7 +211,7 @@ const About = () => {
             </Link>
             <Link
               to={""}
-              className="text-[13px] text-white px-[18px] py-[9px] font-[550] bg-black bg-opacity-50 ease-in-out duration-300 transition-colors rounded-lg hover:bg-transparent hover:transition-colors hover:ease-in-out hover:duration-300"
+              className="text-[13px] text-white px-[18px] py-[9px] font-[550] bg-black bg-opacity-50 ease-in-out duration-300 transition-colors rounded-lg hover:bg-transparent hover:text-primary-600 hover:transition-colors hover:ease-in-out hover:duration-300"
             >
               <span>Learn More</span>
             </Link>
