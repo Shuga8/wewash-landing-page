@@ -122,7 +122,6 @@ const Home = () => {
           </li>
         </ul>
       </div>
-
       <About />
     </>
   );

@@ -39,14 +39,14 @@ const Navbar = () => {
         </Link>
 
         <Link
-          to={"/#about"}
+          to={"#about"}
           className="text-[15px] font-[650] text-white hover:text-primary-500"
         >
           About
         </Link>
 
         <Link
-          to={"/#contact"}
+          to={"#contact"}
           className="text-[15px] font-[650] text-white hover:text-primary-500"
         >
           Contact
