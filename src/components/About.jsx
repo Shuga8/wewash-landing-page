@@ -169,7 +169,7 @@ const About = () => {
         </div>
       </div>
 
-      <section className="products bg-[#0A0A0A] w-full py-10 base:py-14 md:py-20 px-3 base:px-12 md:px-24">
+      <section className="products bg-[#0A0A0A] w-full py-10 base:py-14 md:py-20 px-6 base:px-12 md:px-24">
         <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-y-10 gap-x-24 md:justify-between mb-10">
           <div className="block">
             <p className="text-center w-fit px-4 py-[4px] text-purple-600 bg-white bg-opacity-10 font-[650] rounded-lg text-[13px] backdrop:blur-[2px]">
@@ -186,7 +186,7 @@ const About = () => {
               your bank account—all in one app.
             </p>
 
-            <ul className="py-8 px-3 grid grid-cols-2 max-w-[400px]">
+            <ul className="py-8 px-3 grid grid-cols-2 max-w-[400px] gap-3">
               <li className="flex flex-row gap-x-[10px] place-items-center my-[10px]">
                 <IoCheckmark className="text-green-500 text-[26px]" />
                 <span className="text-slate-300 text-[15px] font-[550]">
@@ -265,7 +265,7 @@ const About = () => {
               reliability.
             </p>
 
-            <ul className="py-8 px-3 grid grid-cols-2 max-w-[600px]">
+            <ul className="py-8 px-3 grid grid-cols-2 max-w-[600px] gap-3">
               <li className="flex flex-row gap-x-[10px] place-items-center my-[10px]">
                 <IoCheckmark className="text-green-500 text-[26px]" />
                 <span className="text-slate-300 text-[15px] font-[550]">
@@ -387,6 +387,40 @@ const About = () => {
           </div>
         </div>
       </section>
+
+      <div
+        id="about"
+        className="w-full py-10 base:py-14 md:py-20 px-6 base:px-12 md:px-24"
+      >
+        <h3 className="text-[1.7rem] font-[600] mb-6">Our Story</h3>
+
+        <p className="text-base text-slate-800 leading-[1.6] max-w-[900px] mb-4">
+          WeWash was born from a simple vision—to revolutionize the car wash
+          industry by making payments and earnings seamless, transparent, and
+          efficient. We understand the challenges washers and individuals face
+          in managing transactions and earnings daily, and we set out to
+          simplify these processes through innovative and user-friendly
+          solutions.
+        </p>
+        <p className="text-base text-slate-800 leading-[1.6] max-w-[900px] mb-8">
+          At WeWash, we believe in collaboration and empowerment. Our platform
+          is designed to support car washers, individuals, and businesses alike,
+          ensuring that everyone can focus on what truly matters—providing and
+          enjoying quality car wash services. By leveraging cutting-edge
+          technology, WeWash aims to create a connected ecosystem that fosters
+          growth, trust, and reliability in the car wash industry.
+        </p>
+
+        <Link className="text-[13px] text-white bg-primary-600 px-[22px] py-[12px] font-[550] rounded-lg">
+          <span>Contact Us</span>
+        </Link>
+      </div>
+
+      <div className="bg-gray-50 w-full py-10 base:py-14 md:py-20 px-3 base:px-12 md:px-24 flex justify-center">
+        <h4 className="text-black text-[0.9rem] base:text-[1.4rem] md:text-[1.8rem] font-[650]">
+          Here's what a few people have said about us
+        </h4>
+      </div>
     </>
   );
 };
