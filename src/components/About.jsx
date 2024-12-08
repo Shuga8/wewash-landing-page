@@ -85,7 +85,7 @@ const About = () => {
               src={wash_one}
               alt=""
               className="w-full h-full object-fill"
-              fetchPriority="high"
+              fetchpriority="high"
             />
           </div>
         </div>
@@ -163,7 +163,7 @@ const About = () => {
               src={wash_two}
               alt=""
               className="w-full h-full object-fill"
-              fetchPriority="high"
+              fetchpriority="high"
             />
           </div>
         </div>
@@ -243,7 +243,7 @@ const About = () => {
               src={dashboard_slant}
               alt=""
               className="w-full h-full object-contain"
-              fetchPriority="high"
+              fetchpriority="high"
             />
           </div>
         </div>
@@ -322,7 +322,7 @@ const About = () => {
               src={checkout_straight}
               alt=""
               className="w-full h-[500px] object-contain"
-              fetchPriority="high"
+              fetchpriority="high"
             />
           </div>
         </div>
@@ -416,10 +416,24 @@ const About = () => {
         </Link>
       </div>
 
-      <div className="bg-gray-50 w-full py-10 base:py-14 md:py-20 px-3 base:px-12 md:px-24 flex justify-center">
-        <h4 className="text-black text-[0.9rem] base:text-[1.4rem] md:text-[1.8rem] font-[650]">
+      <div className="bg-gray-50 w-full py-10 base:py-14 md:py-20 px-3 base:px-12 md:px-24 flex flex-col justify-center place-items-center gap-y-8">
+        <h4 className="text-black text-[0.9rem] base:text-[1.4rem] md:text-[1.8rem] font-[650] text-center">
           Here's what a few people have said about us
         </h4>
+        <div className="w-full testaments flex flex-row overflow-x-scroll">
+          <div className="testament w-full flex justify-center place-items-center flex-col gap-y-8 text-center">
+            <p className="leading-md text-slate-600 text-[16px] max-w-[450px] text-center">
+              " Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+              Consectetur neque ipsum rerum quam in nulla soluta ratione beatae,
+              sed fuga. "
+            </p>
+
+            <div className="text-center">
+              <p className="text-gray-800 text-[16px] mb-2 font-[700]">Sage</p>
+              <p className="text-slate-500 text-xs">Mobile App User</p>
+            </div>
+          </div>
+        </div>
       </div>
     </>
   );
