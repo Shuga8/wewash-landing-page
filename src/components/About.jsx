@@ -3,7 +3,7 @@ import shaded_img from "../assets/shaded.png";
 import wash_one from "../assets/wash_one.webp";
 import wash_two from "../assets/wash_two.webp";
 import dashboard_slant from "../assets/Dashboard-14-Iphone-Pro-MockupA-.png";
-import checkout_straight from "../assets/Checkout-14-Iphone-Pro-MockupB-.png";
+import checkout_straight from "../assets/checkout_large.png";
 import paystack from "../assets/paystack.png";
 import access from "../assets/access.png";
 import visa from "../assets/visa.png/";
@@ -533,8 +533,8 @@ const About = () => {
         </div>
       </div>
 
-      <div className="accolades bg-white w-full py-10 base:py-14 md:py-16 px-5 base:px-12 md:px-32 flex flex-col md:flex-row gap-x-8 gap-y-4 place-items-center">
-        <div className="h-fit basis-[90%] shrink md:basis-[40%] grow">
+      <div className="accolades bg-white w-full py-10 base:py-14 md:py-16 px-5 base:px-12 md:px-32 flex flex-col lg:flex-row gap-x-8 gap-y-4 place-items-center">
+        <div className="h-fit basis-[90%] shrink lg:basis-[40%] grow">
           <p className="text-center w-fit px-4 py-[4px] text-indigo-600 bg-black bg-opacity-10 font-[650] rounded-lg text-[13px] backdrop:blur-[2px]">
             For Clients
           </p>
@@ -552,7 +552,7 @@ const About = () => {
             <span>Contact Us</span>
           </Link>
         </div>
-        <div className="h-fit basis-[100%] shrink md:basis-[60%] grow py-3 flex flex-col gap-y-1">
+        <div className="h-fit basis-[100%] shrink lg:basis-[60%] grow py-3 flex flex-col gap-y-1">
           <div className="scroll-container flex flex-row mx-auto w-[100%] gap-x-4 px-[14px] py-[3px] bg-white">
             <ul className="scroll-ell flex flex-row gap-x-2 place-items-center flex-shrink-0">
               <li>
