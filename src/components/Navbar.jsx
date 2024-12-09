@@ -12,7 +12,8 @@ const Navbar = () => {
     let header = document.querySelector(".header");
     let headerLogo = document.querySelector(".header-logo");
     const texts = document.querySelectorAll(".blue-text");
-    window.addEventListener("scroll", function (e) {
+
+    const scrollAction = (e) => {
       let currentScroll = window.scrollY;
 
       if (currentScroll > height) {
@@ -28,7 +29,12 @@ const Navbar = () => {
           text.classList.replace("text-primary-600", "text-white");
         });
       }
-    });
+    };
+    window.addEventListener("scroll", scrollAction);
+
+    return () => {
+      window.removeEventListener("scroll", scrollAction);
+    };
   }, []);
   return (
     <header className="header w-full flex justify-between place-items-center py-[24px] px-[32px] base:px-[44px] lg:px-[64px] xl:px-[100px]">
