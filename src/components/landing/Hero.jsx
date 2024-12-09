@@ -28,22 +28,18 @@ const Hero = () => {
           <Map />
         </div>
         <div className="content w-full h-full flex justify-center items-center flex-col gap-y-8 text-wrap px-12 base:px-32 xl:px-48 py-3 absolute z-[10]">
-          <Fade direction="down">
+          <Fade cascade triggerOnce={true}>
             <h1 className="title text-[2.2rem] base:text-[3rem] xl:text-[3.5rem] text-center">
               Africa's pioneer in carwash service & systems
             </h1>
-          </Fade>
 
-          <Fade direction="left">
             <h2 className="sub-title text-center">
               We are revolutionizing car wash services in Africa by introducing
               innovative solutions to scale operations, ensure seamless and
               secure transactions, and provide convenient, customer-focused
               real-life experiences.
             </h2>
-          </Fade>
 
-          <Fade direction="up">
             <div className="action-links flex flex-row gap-x-5">
               <Link className="text-[13px] text-black bg-white px-[18px] py-[9px] font-[550] rounded-lg">
                 <span>Contact Us</span>

@@ -58,7 +58,7 @@ const About = () => {
   return (
     <>
       <div className="w-full py-10 base:py-14 md:py-20 px-6 base:px-12 md:px-24 block">
-        <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-10 md:justify-between mb-10">
+        <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-10 lg:justify-between mb-10">
           <div className="block">
             <p className="text-center w-fit px-4 py-[4px] text-orange-600 bg-black bg-opacity-10 font-[650] rounded-lg text-[13px] backdrop:blur-[2px]">
               For Washers
@@ -137,7 +137,7 @@ const About = () => {
           </div>
         </div>
 
-        <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-10 md:justify-between">
+        <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-10 lg:justify-between">
           <div className="block">
             <p className="text-center w-fit px-4 py-[4px] text-orange-600 bg-black bg-opacity-10 font-[650] rounded-lg text-[13px] backdrop:blur-[2px]">
               For Individuals
@@ -217,7 +217,7 @@ const About = () => {
       </div>
 
       <section className="products bg-[#0A0A0A] w-full py-10 base:py-14 md:py-20 px-6 base:px-12 md:px-24">
-        <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-y-10 gap-x-24 md:justify-between mb-10">
+        <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-y-10 gap-x-24 lg:justify-between mb-10">
           <div className="block">
             <p className="text-center w-fit px-4 py-[4px] text-purple-600 bg-white bg-opacity-10 font-[650] rounded-lg text-[13px] backdrop:blur-[2px]">
               For Washers And Individuals
@@ -295,7 +295,7 @@ const About = () => {
           </div>
         </div>
 
-        <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-y-10 gap-x-24 md:justify-between mb-10">
+        <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-y-10 gap-x-24 lg:justify-between mb-10">
           <div className="block">
             <p className="text-center w-fit px-4 py-[4px] text-purple-600 bg-white bg-opacity-10 font-[650] rounded-lg text-[13px] backdrop:blur-[2px]">
               For Individuals
