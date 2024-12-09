@@ -352,7 +352,7 @@ const About = () => {
 
             <Link
               to={""}
-              className="px-[17px] py-[10px] text-primary-600 bg-transparent text-[15px] font-[550] border border-transparent hover:border hover:border-primary-600 ease-in-out duration-300 transition-[border] rounded-lg"
+              className="px-[19px] py-[12px] text-primary-600 bg-transparent text-[15px] font-[550] border border-transparent hover:border hover:border-white hover:text-white ease-in-out duration-300 transition-[border]"
             >
               Learn More
             </Link>
@@ -488,7 +488,7 @@ const About = () => {
 
             <div className="text-center">
               <p className="text-gray-800 text-[16px] mb-2 font-[700]">Son</p>
-              <p className="text-slate-500 text-xs">Mobile App User</p>
+              <p className="text-slate-500 text-xs">Washer App User</p>
             </div>
           </div>
 
@@ -514,7 +514,7 @@ const About = () => {
 
             <div className="text-center">
               <p className="text-gray-800 text-[16px] mb-2 font-[700]">Jin</p>
-              <p className="text-slate-500 text-xs">Mobile App User</p>
+              <p className="text-slate-500 text-xs">Washer App User</p>
             </div>
           </div>
         </div>
