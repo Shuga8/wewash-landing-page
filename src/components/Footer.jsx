@@ -20,7 +20,7 @@ const Footer = () => {
           </p>
         </div>
 
-        <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-x-3 gap-y-4">
+        <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-3 gap-y-4">
           <div className=" bg-white bg-opacity-10 h-[400px] rounded-2xl overflow-hidden relative px-3 md:px-6 py-4 flex flex-col gap-y-5 place-items-center">
             <h5 className="w-fit px-3 py-1 bg-white bg-opacity-5 text-center text-primary-600 rounded-2xl text-[13px] font-[550] border-white border border-opacity-15">
               User mobile app
