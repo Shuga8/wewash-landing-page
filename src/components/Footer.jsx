@@ -21,8 +21,8 @@ const Footer = () => {
           </p>
         </div>
 
-        <Fade direction="up" triggerOnce={true}>
-          <div className="w-full grid grid-cols-1 lg:grid-cols-3 gap-x-3 gap-y-4">
+        <div className="w-full grid grid-cols-1 lg:grid-cols-3 gap-x-3 gap-y-4">
+          <Fade cascade triggerOnce={true}>
             <div className=" bg-white bg-opacity-10 h-[400px] rounded-2xl overflow-hidden relative px-3 md:px-6 py-4 flex flex-col gap-y-5 place-items-center">
               <h5 className="w-fit px-3 py-1 bg-white bg-opacity-5 text-center text-primary-600 rounded-2xl text-[13px] font-[550] border-white border border-opacity-15">
                 User mobile app
@@ -46,7 +46,9 @@ const Footer = () => {
                 <img src={dashboard_lg} alt="" className="aspect-auto" />
               </div>
             </div>
+          </Fade>
 
+          <Fade cascade triggerOnce={true}>
             <div className=" bg-white bg-opacity-10 h-[400px] rounded-2xl overflow-hidden relative px-3 md:px-6 py-4 flex flex-col gap-y-5 place-items-center">
               <h5 className="w-fit px-3 py-1 bg-white bg-opacity-5 text-center text-orange-600 rounded-2xl text-[13px] font-[550] border-white border border-opacity-15">
                 Payment system
@@ -66,7 +68,9 @@ const Footer = () => {
                 <img src={cards_img} alt="" className="object-contain" />
               </div>
             </div>
+          </Fade>
 
+          <Fade cascade triggerOnce={true}>
             <div className=" bg-white bg-opacity-10 h-[400px] rounded-2xl overflow-hidden relative px-3 md:px-6 py-4 flex flex-col gap-y-5 place-items-center ">
               <h5 className="w-fit px-3 py-1 bg-white bg-opacity-5 text-center text-purple-600 rounded-2xl text-[13px] font-[550] border-white border border-opacity-15">
                 Washer mobile app
@@ -90,9 +94,8 @@ const Footer = () => {
                 <img src={dashboard_lg} alt="" className="aspect-auto" />
               </div>
             </div>
-          </div>
-        </Fade>
-
+          </Fade>
+        </div>
         <nav className="w-full px-0 lg:px-24 ">
           <div className="flex flex-wrap lg:flex-nowrap justify-center gap-x-2 lg:gap-x-8 gap-y-8 py-9 border-b border-slate-700">
             <div className="basis-[98%] lg:basis-[30%]">
