@@ -8,16 +8,16 @@ import { IoCheckmark } from "react-icons/io5";
 import { Link } from "react-router-dom";
 
 const About = () => {
-  const testamentsRef = useRef(null); // Reference to the scrolling container
+  const testamentsRef = useRef(null);
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
       handleAutoSlide();
       setActiveDot();
-    }, 3000); // Auto-slide every 3 seconds
+    }, 3000);
 
-    return () => clearInterval(interval); // Cleanup interval on component unmount
+    return () => clearInterval(interval);
   }, [currentIndex]);
 
   const handleAutoSlide = () => {
