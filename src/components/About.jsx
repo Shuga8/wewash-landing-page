@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState, useRef } from "react";
 import shaded_img from "../assets/shaded.png";
 import wash_one from "../assets/wash_one.webp";
 import wash_two from "../assets/wash_two.webp";
@@ -8,6 +8,47 @@ import { IoCheckmark } from "react-icons/io5";
 import { Link } from "react-router-dom";
 
 const About = () => {
+  const testamentsRef = useRef(null); // Reference to the scrolling container
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      handleAutoSlide();
+      setActiveDot();
+    }, 3000); // Auto-slide every 3 seconds
+
+    return () => clearInterval(interval); // Cleanup interval on component unmount
+  }, [currentIndex]);
+
+  const handleAutoSlide = () => {
+    const container = testamentsRef.current;
+    if (!container) return;
+
+    const totalItems = container.children.length;
+    const scrollWidth = container.scrollWidth / totalItems;
+
+    container.scrollTo({
+      left: currentIndex * scrollWidth,
+      behavior: "smooth",
+    });
+
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % totalItems);
+  };
+
+  const setActiveDot = () => {
+    const dots = document.querySelectorAll(".dot");
+    dots.forEach((dot) => {
+      dot.classList.replace("bg-primary-500", "bg-transparent");
+      dot.classList.replace("border-gray-300", "border-primary-500");
+    });
+
+    dots[currentIndex].classList.replace("bg-transparent", "bg-primary-500");
+    dots[currentIndex].classList.replace(
+      "border-primary-500",
+      "border-gray-300"
+    );
+  };
+
   return (
     <>
       <div className="w-full py-10 base:py-14 md:py-20 px-6 base:px-12 md:px-24 block">
@@ -365,13 +406,14 @@ const About = () => {
           </p>
 
           <h3 className="text-center text-black text-[1.4rem] font-[550]">
-            Seamless Payments
+            Seamless Wash Experience
           </h3>
 
           <p className="text-slate-700 text-center max-w-[800px] leading-[1.9]">
-            We make it easy for you to receive payments by converting digital
-            currencies into your preferred local currency. Enjoy a secure,
-            hassle-free, and dependable payment process tailored to your needs.
+            As an individual we make it easy for you to order for a wash, choose
+            prefered wash package, and monitor your wash. For washers we make it
+            easy for your to accept wash requests with location convenience and
+            dynamic payment recieving process.
           </p>
 
           <div className="action-links flex flex-row gap-x-5">
@@ -420,8 +462,11 @@ const About = () => {
         <h4 className="text-black text-[0.9rem] base:text-[1.4rem] md:text-[1.8rem] font-[650] text-center">
           Here's what a few people have said about us
         </h4>
-        <div className="w-full testaments flex flex-row overflow-x-scroll">
-          <div className="testament w-full flex justify-center place-items-center flex-col gap-y-8 text-center">
+        <div
+          className="w-full testaments flex flex-row overflow-x-scroll"
+          ref={testamentsRef}
+        >
+          <div className="testament w-full flex justify-center place-items-center flex-col gap-y-8 text-center flex-shrink-0">
             <p className="leading-md text-slate-600 text-[16px] max-w-[450px] text-center">
               " Lorem ipsum dolor sit amet consectetur, adipisicing elit.
               Consectetur neque ipsum rerum quam in nulla soluta ratione beatae,
@@ -433,6 +478,52 @@ const About = () => {
               <p className="text-slate-500 text-xs">Mobile App User</p>
             </div>
           </div>
+
+          <div className="testament w-full flex justify-center place-items-center flex-col gap-y-8 text-center flex-shrink-0 py-2">
+            <p className="leading-md text-slate-600 text-[16px] max-w-[450px] text-center">
+              " Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+              Consectetur neque ipsum rerum quam in nulla soluta ratione beatae,
+              sed fuga. "
+            </p>
+
+            <div className="text-center">
+              <p className="text-gray-800 text-[16px] mb-2 font-[700]">Son</p>
+              <p className="text-slate-500 text-xs">Mobile App User</p>
+            </div>
+          </div>
+
+          <div className="testament w-full flex justify-center place-items-center flex-col gap-y-8 text-center flex-shrink-0 py-2">
+            <p className="leading-md text-slate-600 text-[16px] max-w-[450px] text-center">
+              " Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+              Consectetur neque ipsum rerum quam in nulla soluta ratione beatae,
+              sed fuga. "
+            </p>
+
+            <div className="text-center">
+              <p className="text-gray-800 text-[16px] mb-2 font-[700]">Ren</p>
+              <p className="text-slate-500 text-xs">Mobile App User</p>
+            </div>
+          </div>
+
+          <div className="testament w-full flex justify-center place-items-center flex-col gap-y-8 text-center flex-shrink-0 py-2">
+            <p className="leading-md text-slate-600 text-[16px] max-w-[450px] text-center">
+              " Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+              Consectetur neque ipsum rerum quam in nulla soluta ratione beatae,
+              sed fuga. "
+            </p>
+
+            <div className="text-center">
+              <p className="text-gray-800 text-[16px] mb-2 font-[700]">Jin</p>
+              <p className="text-slate-500 text-xs">Mobile App User</p>
+            </div>
+          </div>
+        </div>
+
+        <div className="dots flex flex-row gap-x-2 justify-center p-2 place-items-center w-fit">
+          <div className="dot w-[15px] h-[15px] bg-primary-500 border-[3px] border-gray-300 rounded-full cursor-pointer"></div>
+          <div className="dot w-[15px] h-[15px] bg-transparent border-[3px] border-primary-500 rounded-full cursor-pointer"></div>
+          <div className="dot w-[15px] h-[15px] bg-transparent border-[3px] border-primary-500 rounded-full cursor-pointer "></div>
+          <div className="dot w-[15px] h-[15px] bg-transparent border-[3px] border-primary-500 rounded-full cursor-pointer"></div>
         </div>
       </div>
     </>

@@ -90,6 +90,23 @@ header {
   z-index: 1; /* Keep the content below the pseudo-elements */
 }
 
+.testaments {
+  /*&::-webkit-scrollbar-thumb {
+    color: #247;
+    background-color: #247;
+    width: 30px;
+  }*/
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+}
+.testaments::-webkit-scrollbar {
+  width: 0px;
+  height: 2px;
+}
+.testaments > div {
+  scroll-snap-align: start;
+}
+
 @keyframes scroll {
   to {
     transform: translateX(calc(-100% - 96px));
