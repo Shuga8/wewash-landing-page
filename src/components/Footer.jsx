@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import dashboard_lg from "../assets/dahboard_large.png";
 import cards_img from "../assets/cards.png";
 import logo from "../assets/logo-white.png";
+import { Fade } from "react-awesome-reveal";
 
 const Footer = () => {
   const year = new Date().getFullYear();
@@ -20,75 +21,77 @@ const Footer = () => {
           </p>
         </div>
 
-        <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-3 gap-y-4">
-          <div className=" bg-white bg-opacity-10 h-[400px] rounded-2xl overflow-hidden relative px-3 md:px-6 py-4 flex flex-col gap-y-5 place-items-center">
-            <h5 className="w-fit px-3 py-1 bg-white bg-opacity-5 text-center text-primary-600 rounded-2xl text-[13px] font-[550] border-white border border-opacity-15">
-              User mobile app
-            </h5>
+        <Fade direction="up" triggerOnce={true}>
+          <div className="w-full grid grid-cols-1 lg:grid-cols-3 gap-x-3 gap-y-4">
+            <div className=" bg-white bg-opacity-10 h-[400px] rounded-2xl overflow-hidden relative px-3 md:px-6 py-4 flex flex-col gap-y-5 place-items-center">
+              <h5 className="w-fit px-3 py-1 bg-white bg-opacity-5 text-center text-primary-600 rounded-2xl text-[13px] font-[550] border-white border border-opacity-15">
+                User mobile app
+              </h5>
 
-            <p className="text-[13px] md:text-[16px] text-slate-100 text-wrap text-center">
-              Request for washes from one application
-            </p>
+              <p className="text-[13px] md:text-[16px] text-slate-100 text-wrap text-center">
+                Request for washes from one application
+              </p>
 
-            <div className="grid grid-cols-2 gap-x-2">
-              <Link className="w-full bg-primary-600 border border-primary-600 text-white hover:text-primary-600 hover:bg-transparent text-[11px] md:text-[14px] transition-colors ease-out duration-300 px-10 py-2 rounded-xl text-center">
-                For IOS
-              </Link>
+              <div className="grid grid-cols-2 gap-x-2">
+                <Link className="w-full bg-primary-600 border border-primary-600 text-white hover:text-primary-600 hover:bg-transparent text-[11px] md:text-[14px] transition-colors ease-out duration-300 px-10 py-2 rounded-xl text-center">
+                  For IOS
+                </Link>
 
-              <Link className="w-full bg-white border border-white text-primary-600 hover:text-white hover:bg-transparent text-[11px] md:text-[14px] transition-colors ease-out duration-300 px-10 py-2 rounded-xl text-center">
-                For Android
-              </Link>
+                <Link className="w-full bg-white border border-white text-primary-600 hover:text-white hover:bg-transparent text-[11px] md:text-[14px] transition-colors ease-out duration-300 px-10 py-2 rounded-xl text-center">
+                  For Android
+                </Link>
+              </div>
+
+              <div className="absolute w-full px-4 h-[370px] -bottom-[33%] py-2 z-[1] drop-shadow-[-2px_2px_8px_#777] select-none">
+                <img src={dashboard_lg} alt="" className="aspect-auto" />
+              </div>
             </div>
 
-            <div className="absolute w-full px-4 h-[370px] -bottom-[33%] py-2 z-[1] drop-shadow-[-2px_2px_8px_#777] select-none">
-              <img src={dashboard_lg} alt="" className="aspect-auto" />
+            <div className=" bg-white bg-opacity-10 h-[400px] rounded-2xl overflow-hidden relative px-3 md:px-6 py-4 flex flex-col gap-y-5 place-items-center">
+              <h5 className="w-fit px-3 py-1 bg-white bg-opacity-5 text-center text-orange-600 rounded-2xl text-[13px] font-[550] border-white border border-opacity-15">
+                Payment system
+              </h5>
+
+              <p className="text-[13px] md:text-[16px] text-slate-100 text-wrap text-center">
+                Visa, MasterCard & Bank Transfers
+              </p>
+
+              <div className="flex justify-center w-fit">
+                <Link className="w-full bg-primary-600 border border-primary-600 text-white hover:text-primary-600 hover:bg-transparent text-[11px] md:text-[14px] transition-colors ease-out duration-300 px-14 py-2 rounded-xl text-center">
+                  Contact Us
+                </Link>
+              </div>
+
+              <div className=" w-full px-4 py-2 drop-shadow-[1px_1px_3px_#ea580f] select-none">
+                <img src={cards_img} alt="" className="object-contain" />
+              </div>
+            </div>
+
+            <div className=" bg-white bg-opacity-10 h-[400px] rounded-2xl overflow-hidden relative px-3 md:px-6 py-4 flex flex-col gap-y-5 place-items-center ">
+              <h5 className="w-fit px-3 py-1 bg-white bg-opacity-5 text-center text-purple-600 rounded-2xl text-[13px] font-[550] border-white border border-opacity-15">
+                Washer mobile app
+              </h5>
+
+              <p className="text-[13px] md:text-[16px] text-slate-100 text-wrap text-center">
+                Become a WeWash washer
+              </p>
+
+              <div className="grid grid-cols-2 gap-x-2">
+                <Link className="w-full bg-primary-600 border border-primary-600 text-white hover:text-primary-600 hover:bg-transparent text-[11px] md:text-[14px] transition-colors ease-out duration-300 px-10 py-2 rounded-xl text-center">
+                  For IOS
+                </Link>
+
+                <Link className="w-full bg-white border border-white text-primary-600 hover:text-white hover:bg-transparent text-[11px] md:text-[14px] transition-colors ease-out duration-300 px-10 py-2 rounded-xl text-center">
+                  For Android
+                </Link>
+              </div>
+
+              <div className="absolute w-full px-4 h-[370px] -bottom-[33%] py-2 z-[1] drop-shadow-[-2px_2px_8px_#777] select-none">
+                <img src={dashboard_lg} alt="" className="aspect-auto" />
+              </div>
             </div>
           </div>
-
-          <div className=" bg-white bg-opacity-10 h-[400px] rounded-2xl overflow-hidden relative px-3 md:px-6 py-4 flex flex-col gap-y-5 place-items-center">
-            <h5 className="w-fit px-3 py-1 bg-white bg-opacity-5 text-center text-orange-600 rounded-2xl text-[13px] font-[550] border-white border border-opacity-15">
-              Payment system
-            </h5>
-
-            <p className="text-[13px] md:text-[16px] text-slate-100 text-wrap text-center">
-              Visa, MasterCard & Bank Transfers
-            </p>
-
-            <div className="flex justify-center w-fit">
-              <Link className="w-full bg-primary-600 border border-primary-600 text-white hover:text-primary-600 hover:bg-transparent text-[11px] md:text-[14px] transition-colors ease-out duration-300 px-14 py-2 rounded-xl text-center">
-                Contact Us
-              </Link>
-            </div>
-
-            <div className=" w-full px-4 py-2 drop-shadow-[1px_1px_3px_#ea580f] select-none">
-              <img src={cards_img} alt="" className="object-contain" />
-            </div>
-          </div>
-
-          <div className=" bg-white bg-opacity-10 h-[400px] rounded-2xl overflow-hidden relative px-3 md:px-6 py-4 flex flex-col gap-y-5 place-items-center ">
-            <h5 className="w-fit px-3 py-1 bg-white bg-opacity-5 text-center text-purple-600 rounded-2xl text-[13px] font-[550] border-white border border-opacity-15">
-              Washer mobile app
-            </h5>
-
-            <p className="text-[13px] md:text-[16px] text-slate-100 text-wrap text-center">
-              Become a WeWash washer
-            </p>
-
-            <div className="grid grid-cols-2 gap-x-2">
-              <Link className="w-full bg-primary-600 border border-primary-600 text-white hover:text-primary-600 hover:bg-transparent text-[11px] md:text-[14px] transition-colors ease-out duration-300 px-10 py-2 rounded-xl text-center">
-                For IOS
-              </Link>
-
-              <Link className="w-full bg-white border border-white text-primary-600 hover:text-white hover:bg-transparent text-[11px] md:text-[14px] transition-colors ease-out duration-300 px-10 py-2 rounded-xl text-center">
-                For Android
-              </Link>
-            </div>
-
-            <div className="absolute w-full px-4 h-[370px] -bottom-[33%] py-2 z-[1] drop-shadow-[-2px_2px_8px_#777] select-none">
-              <img src={dashboard_lg} alt="" className="aspect-auto" />
-            </div>
-          </div>
-        </div>
+        </Fade>
 
         <nav className="w-full px-0 lg:px-24 ">
           <div className="flex flex-wrap lg:flex-nowrap justify-center gap-x-2 lg:gap-x-8 gap-y-8 py-9 border-b border-slate-700">
