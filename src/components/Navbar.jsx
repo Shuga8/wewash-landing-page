@@ -38,12 +38,12 @@ const Navbar = () => {
           Product
         </Link>
 
-        <Link
-          to={"#about"}
+        <a
+          href={"#about"}
           className="text-[15px] font-[650] text-white hover:text-primary-500"
         >
           About
-        </Link>
+        </a>
 
         <Link
           to={"#contact"}

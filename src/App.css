@@ -15,6 +15,7 @@ html {
 
 body {
   position: relative;
+  scroll-behavior: smooth;
 }
 body::-webkit-scrollbar {
   width: 0px;
