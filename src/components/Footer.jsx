@@ -5,6 +5,7 @@ import cards_img from "../assets/cards.png";
 import logo from "../assets/logo-white.png";
 
 const Footer = () => {
+  const year = new Date().getFullYear();
   return (
     <>
       <footer className="w-full bg-[#0a0a0a] py-10 base:py-14 md:py-16 px-5 base:px-12 md:px-32 flex flex-col gap-y-6 justify-center place-items-center">
@@ -171,6 +172,22 @@ const Footer = () => {
                 </Link>
               </div>
             </div>
+          </div>
+
+          <div className="pt-10 pb-0 text-center text-slate-300 text-[13px]">
+            <p className="text-center mb-1">
+              All Rights Reserved, &copy;{year}
+            </p>
+            <p className="text-center">
+              Developed By{" "}
+              <a
+                href="http://onethought.ng"
+                className="text-cyan-500 hover:text-cyan-300 duration-300 ease-in-out transition-colors"
+              >
+                OneThought Technologies
+              </a>
+              &trade;
+            </p>
           </div>
         </nav>
       </footer>
