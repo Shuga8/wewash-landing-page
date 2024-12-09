@@ -29,8 +29,10 @@ header {
   z-index: 30;
 }
 header.scrolled {
+  top: 0;
   background: #fff;
   transition: all 0.3s ease-in-out;
+  animation: slide-down 0.7s linear;
 }
 
 .hero .title {
@@ -157,5 +159,13 @@ header.scrolled {
 @keyframes scrollReverse {
   to {
     transform: translateX(calc(100% - 96px));
+  }
+}
+@keyframes slide-down {
+  from {
+    top: -200px;
+  }
+  to {
+    top: 0px;
   }
 }/*# sourceMappingURL=App.css.map */

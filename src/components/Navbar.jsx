@@ -7,14 +7,15 @@ import { Link } from "react-router-dom";
 
 const Navbar = () => {
   useEffect(() => {
-    let previousScoll = window.scrollY;
+    const height = window.innerHeight;
+
     let header = document.querySelector(".header");
     let headerLogo = document.querySelector(".header-logo");
     const texts = document.querySelectorAll(".blue-text");
     window.addEventListener("scroll", function (e) {
       let currentScroll = window.scrollY;
 
-      if (currentScroll > 800) {
+      if (currentScroll > height) {
         header.classList.add("scrolled");
         headerLogo.setAttribute("src", logo_blue);
         texts.forEach((text) => {
