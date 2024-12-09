@@ -32,7 +32,7 @@ header.scrolled {
   top: 0;
   background: #fff;
   transition: all 0.3s ease-in-out;
-  animation: slide-down 0.7s linear;
+  animation: slide-down 0.4s linear;
 }
 
 .hero .title {
