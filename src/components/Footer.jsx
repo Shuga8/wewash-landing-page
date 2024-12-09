@@ -54,6 +54,12 @@ const Footer = () => {
               Visa, MasterCard & Bank Transfers
             </p>
 
+            <div className="flex justify-center w-fit">
+              <Link className="w-full bg-primary-600 border border-primary-600 text-white hover:text-primary-600 hover:bg-transparent text-[11px] md:text-[14px] transition-colors ease-out duration-300 px-14 py-2 rounded-xl text-center">
+                Contact Us
+              </Link>
+            </div>
+
             <div className=" w-full px-4 py-2 drop-shadow-[1px_1px_3px_#ea580f] select-none">
               <img src={cards_img} alt="" className="object-contain" />
             </div>
