@@ -25,10 +25,15 @@ body {
 }
 
 header {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   z-index: 30;
+
+  &.scrolled {
+    background: #fff;
+    transition: all 0.3s ease-in-out;
+  }
 }
 
 .hero {
