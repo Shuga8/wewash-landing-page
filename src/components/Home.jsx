@@ -1,5 +1,5 @@
 import React from "react";
-import { Hero, Navbar, About } from "./index";
+import { Hero, Navbar, About, Footer } from "./index";
 import flutterwave from "../assets/flutterwave.png";
 import visa from "../assets/visa.png";
 import mastarcard from "../assets/mastarcard.png";
@@ -123,6 +123,7 @@ const Home = () => {
         </ul>
       </div>
       <About />
+      <Footer />
     </>
   );
 };
