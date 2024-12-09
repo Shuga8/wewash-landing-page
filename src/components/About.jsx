@@ -4,6 +4,12 @@ import wash_one from "../assets/wash_one.webp";
 import wash_two from "../assets/wash_two.webp";
 import dashboard_slant from "../assets/Dashboard-14-Iphone-Pro-MockupA-.png";
 import checkout_straight from "../assets/Checkout-14-Iphone-Pro-MockupB-.png";
+import paystack from "../assets/paystack.png";
+import access from "../assets/access.png";
+import visa from "../assets/visa.png/";
+import remita from "../assets/remita.webp";
+import wema from "../assets/wema.webp";
+import stripe from "../assets/stripe.png";
 import { IoCheckmark } from "react-icons/io5";
 import { Link } from "react-router-dom";
 
@@ -458,7 +464,7 @@ const About = () => {
         </Link>
       </div>
 
-      <div className="bg-gray-50 w-full py-10 base:py-14 md:py-20 px-3 base:px-12 md:px-24 flex flex-col justify-center place-items-center gap-y-8">
+      <div className="bg-gray-50 w-full py-10 base:py-14 md:py-20 px-5 base:px-12 md:px-24 flex flex-col justify-center place-items-center gap-y-8">
         <h4 className="text-black text-[0.9rem] base:text-[1.4rem] md:text-[1.8rem] font-[650] text-center">
           Here's what a few people have said about us
         </h4>
@@ -520,10 +526,109 @@ const About = () => {
         </div>
 
         <div className="dots flex flex-row gap-x-2 justify-center p-2 place-items-center w-fit">
-          <div className="dot w-[15px] h-[15px] bg-primary-500 border-[3px] border-gray-300 rounded-full cursor-pointer"></div>
-          <div className="dot w-[15px] h-[15px] bg-transparent border-[3px] border-primary-500 rounded-full cursor-pointer"></div>
-          <div className="dot w-[15px] h-[15px] bg-transparent border-[3px] border-primary-500 rounded-full cursor-pointer "></div>
-          <div className="dot w-[15px] h-[15px] bg-transparent border-[3px] border-primary-500 rounded-full cursor-pointer"></div>
+          <div className="dot w-[15px] h-[15px] bg-primary-500 border-[3px] border-gray-300 rounded-full cursor-pointer transition-all duration-500 ease-in-out"></div>
+          <div className="dot w-[15px] h-[15px] bg-transparent border-[3px] border-primary-500 rounded-full cursor-pointer transition-all duration-500 ease-in-out"></div>
+          <div className="dot w-[15px] h-[15px] bg-transparent border-[3px] border-primary-500 rounded-full cursor-pointer transition-all duration-500 ease-in-out"></div>
+          <div className="dot w-[15px] h-[15px] bg-transparent border-[3px] border-primary-500 rounded-full cursor-pointer transition-all duration-500 ease-in-out"></div>
+        </div>
+      </div>
+
+      <div className="accolades bg-white w-full py-10 base:py-14 md:py-16 px-5 base:px-12 md:px-32 flex flex-col md:flex-row gap-x-8 gap-y-4 place-items-center">
+        <div className="h-fit basis-[90%] shrink md:basis-[40%] grow">
+          <p className="text-center w-fit px-4 py-[4px] text-indigo-600 bg-black bg-opacity-10 font-[650] rounded-lg text-[13px] backdrop:blur-[2px]">
+            For Clients
+          </p>
+
+          <h2 className="text-black font-[650] text-[1.3rem] md:text-[2.25rem] my-[20px] flex flex-row gap-x-3">
+            Transform how you manage car wash services.
+          </h2>
+
+          <p className="text-stone-600 text-[16px] leading-[1.8] mb-5">
+            Join countless car owners and service providers who trust WeWash for
+            seamless, efficient, and reliable car wash management.
+          </p>
+
+          <Link className="text-[13px] text-white bg-primary-600 px-[22px] py-[12px] font-[550] rounded-lg">
+            <span>Contact Us</span>
+          </Link>
+        </div>
+        <div className="h-fit basis-[100%] shrink md:basis-[60%] grow py-3 flex flex-col gap-y-1">
+          <div className="scroll-container flex flex-row mx-auto w-[100%] gap-x-4 px-[14px] py-[3px] bg-white">
+            <ul className="scroll-ell flex flex-row gap-x-2 place-items-center flex-shrink-0">
+              <li>
+                <img
+                  src={paystack}
+                  alt="Paystack"
+                  className="w-[200px] h-[30px] object-contain"
+                />
+              </li>
+              <li>
+                <img
+                  src={remita}
+                  alt="Remita"
+                  className="w-[200px] h-[30px] object-contain"
+                />
+              </li>
+              <li>
+                <img
+                  src={visa}
+                  alt="Visa"
+                  className="w-[200px] h-[20px] object-contain"
+                />
+              </li>
+              <li>
+                <img
+                  src={wema}
+                  alt="Wema"
+                  className="w-[200px] h-[60px] object-contain"
+                />
+              </li>
+              <li>
+                <img
+                  src={stripe}
+                  alt="Stripe"
+                  className="w-[200px] h-[30px] object-contain"
+                />
+              </li>
+            </ul>
+            <ul className="scroll-ell flex flex-row gap-x-2 place-items-center flex-shrink-0">
+              <li>
+                <img
+                  src={paystack}
+                  alt="Paystack"
+                  className="w-[200px] h-[40px] object-contain"
+                />
+              </li>
+              <li>
+                <img
+                  src={remita}
+                  alt="Remita"
+                  className="w-[200px] h-[40px] object-contain"
+                />
+              </li>
+              <li>
+                <img
+                  src={visa}
+                  alt="Visa"
+                  className="w-[200px] h-[30px] object-contain"
+                />
+              </li>
+              <li>
+                <img
+                  src={wema}
+                  alt="Wema"
+                  className="w-[200px] h-[80px] object-contain"
+                />
+              </li>
+              <li>
+                <img
+                  src={stripe}
+                  alt="Stripe"
+                  className="w-[200px] h-[40px] object-contain"
+                />
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </>

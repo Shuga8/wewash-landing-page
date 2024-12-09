@@ -56,6 +56,9 @@ header {
 .scroll-container {
   overflow: hidden;
   position: relative;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
   /* Add pseudo-elements for the white inner shadow */
   /* Blur elements as they reach the edges */
 }
@@ -85,6 +88,40 @@ header {
   transition: filter 0.3s; /* Smooth transition for the blur effect */
 }
 
+.scroll-reverse-container {
+  overflow: scroll;
+  position: relative;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  /* Add pseudo-elements for the white inner shadow */
+}
+.scroll-reverse-container::before, .scroll-reverse-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 170px; /* Adjust as needed for shadow size */
+  pointer-events: none; /* Ensure no interference with interactions */
+  z-index: 2; /* Keep it above the scrolling content */
+}
+.scroll-reverse-container::before {
+  left: 0;
+  background: linear-gradient(to right, white, rgba(255, 255, 255, 0));
+}
+.scroll-reverse-container::after {
+  right: 0;
+  background: linear-gradient(to left, white, rgba(255, 255, 255, 0));
+}
+.scroll-reverse-container > ul {
+  animation: scrollReverse 10s linear infinite;
+  position: relative;
+  z-index: 1;
+}
+.scroll-reverse-container > ul li {
+  transition: filter 0.3s;
+}
+
 .about-section > ul {
   animation: scroll 30s linear infinite;
   position: relative;
@@ -111,5 +148,10 @@ header {
 @keyframes scroll {
   to {
     transform: translateX(calc(-100% - 96px));
+  }
+}
+@keyframes scrollReverse {
+  to {
+    transform: translateX(calc(100% - 96px));
   }
 }/*# sourceMappingURL=App.css.map */

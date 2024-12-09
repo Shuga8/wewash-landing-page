@@ -63,6 +63,7 @@ header {
 .scroll-container {
   overflow: hidden;
   position: relative;
+  user-select: none;
 
   /* Add pseudo-elements for the white inner shadow */
   &::before,
@@ -102,6 +103,48 @@ header {
   // }
 }
 
+.scroll-reverse-container {
+  overflow: scroll;
+  position: relative;
+  user-select: none;
+
+  /* Add pseudo-elements for the white inner shadow */
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 170px; /* Adjust as needed for shadow size */
+    pointer-events: none; /* Ensure no interference with interactions */
+    z-index: 2; /* Keep it above the scrolling content */
+  }
+
+  &::before {
+    left: 0;
+    background: linear-gradient(to right, white, rgba(255, 255, 255, 0));
+  }
+
+  &::after {
+    right: 0;
+    background: linear-gradient(to left, white, rgba(255, 255, 255, 0));
+  }
+
+  > ul {
+    animation: scrollReverse 10s linear infinite;
+    position: relative;
+    z-index: 1;
+  }
+
+  > ul li {
+    transition: filter 0.3s;
+  }
+
+  // &:hover > ul li {
+  //   filter: blur(5px);
+  // }
+}
+
 .about-section {
   > ul {
     animation: scroll 30s linear infinite;
@@ -134,5 +177,11 @@ header {
 @keyframes scroll {
   to {
     transform: translateX(calc(-100% - 96px));
+  }
+}
+
+@keyframes scrollReverse {
+  to {
+    transform: translateX(calc(100% - 96px));
   }
 }
