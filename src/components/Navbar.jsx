@@ -11,11 +11,32 @@ const Navbar = () => {
   const headerRef = useRef(null);
   const logoRef = useRef(null);
 
-  // Handle scroll event
   const handleScroll = () => {
     const scrollTop = window.scrollY;
-    const threshold = window.innerHeight; // You can adjust this value if needed
+    const threshold = window.innerHeight;
     setIsScrolled(scrollTop > threshold);
+  };
+
+  const handleAnchorClick = (e, targetId) => {
+    e.preventDefault();
+
+    const target = document.getElementById(targetId);
+    if (target) {
+      target.scrollIntoView({ behavior: "smooth" });
+
+      // Observe when scrolling is done
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            setSideBarState(false);
+            observer.disconnect();
+          }
+        },
+        { threshold: 0.5 } // Adjust threshold for visibility detection
+      );
+
+      observer.observe(target);
+    }
   };
 
   useEffect(() => {
@@ -76,6 +97,7 @@ const Navbar = () => {
             className={`text-[15px] font-[650] hover:text-primary-500 ${
               isScrolled ? "text-primary-600" : "text-white"
             }`}
+            onClick={(e) => handleAnchorClick(e, "about")}
           >
             About
           </a>
@@ -129,19 +151,20 @@ const Navbar = () => {
               Products
             </Link>
 
-            <Link
-              to={"/products"}
+            <a
+              href={"/#about"}
               className="text-[18px] font-[650] text-primary-700 block"
+              onClick={(e) => handleAnchorClick(e, "about")}
             >
               About
-            </Link>
+            </a>
 
-            <Link
-              to={"/products"}
+            <a
+              href={"#contact"}
               className="text-[18px] font-[650] text-primary-700 block"
             >
               Contact Us
-            </Link>
+            </a>
           </div>
         )}
       </aside>
