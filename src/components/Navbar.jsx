@@ -2,6 +2,7 @@ import React, { useEffect, useState, useRef } from "react";
 import logo_white from "../assets/logo-white.png";
 import logo_blue from "../assets/logo.png";
 import { HiOutlineMenuAlt3 } from "react-icons/hi";
+import { IoMdClose } from "react-icons/io";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
@@ -99,27 +100,50 @@ const Navbar = () => {
         </div>
       </header>
       <aside
-        className={`aside w-full fixed bg-white z-[31] transition-[height] duration-300 ease-in-out overflow-hidden block px-6 py-10`}
+        className={`aside w-full fixed bg-white z-[31] transition-[height,_width] duration-300 ease-in-out overflow-hidden block`}
         style={{
           top: 0,
           height: sideBarState ? `100dvh` : `0px`,
         }}
       >
-        <Link
-          to={"/"}
-          className="text-[18px] font-[650] text-slate-700 mb-5 block"
-        >
-          Home
-        </Link>
+        {sideBarState && (
+          <div className="content w-full h-full px-6 py-10 flex justify-center flex-col items-center gap-y-8">
+            <div
+              className="absolute top-0 right-0 text-stone-800 text-[25px] px-4 py-3 "
+              onClick={() => setSideBarState(false)}
+              role="button"
+            >
+              <IoMdClose />
+            </div>
+            <Link
+              to={"/"}
+              className="text-[18px] font-[650] text-primary-700 block"
+            >
+              Home
+            </Link>
 
-        <Link
-          to={"/products"}
-          className="text-[18px] font-[650] text-slate-700 mb-5 block"
-        >
-          Products
-        </Link>
+            <Link
+              to={"/products"}
+              className="text-[18px] font-[650] text-primary-700 block"
+            >
+              Products
+            </Link>
 
-        <section className="bg-gray-100 w-full h-[35%] rounded-md"></section>
+            <Link
+              to={"/products"}
+              className="text-[18px] font-[650] text-primary-700 block"
+            >
+              About
+            </Link>
+
+            <Link
+              to={"/products"}
+              className="text-[18px] font-[650] text-primary-700 block"
+            >
+              Contact Us
+            </Link>
+          </div>
+        )}
       </aside>
     </>
   );
