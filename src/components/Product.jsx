@@ -14,7 +14,7 @@ const Product = () => {
         <div className="absolute w-[100vw] h-[100dvh] md:h-[145dvh] z-[2] top-0 left-0 earth-3d">
           <StarsLayout />
         </div>
-        <div className="content w-full h-[100dvh] md:h-[145dvh] flex justify-center flex-col gap-y-8 text-wrap px-12 base:px-32 xl:px-48 py-3 absolute z-[10]">
+        <div className="content w-full h-[100dvh] md:h-[145dvh] flex justify-center flex-col gap-y-8 text-wrap px-8 base:px-11 lg:px-16 xl:px-24  py-3 absolute z-[10]">
           <Fade cascade triggerOnce={true}>
             <h3 className="w-fit px-3 py-2 flex flex-row gap-x-1 place-items-center bg-white bg-opacity-5 text-center text-white rounded-[25px] text-[13px] font-[550] border-white border border-opacity-15">
               <CiMobile3 className="text-[18px]" />
@@ -53,6 +53,21 @@ const Product = () => {
               />
             </div>
           </Fade>
+        </div>
+      </section>
+
+      <section className="how-it-works px-8 base:px-11 lg:px-16 xl:px-24  py-6 lg:py-10 bg-white ">
+        <div className="block">
+          <Fade cascade triggerOnce={true}>
+            <p className="text-center w-fit px-4 py-[9px] text-indigo-600 bg-black border-indigo-600 border border-opacity-40 bg-opacity-10 font-[650] rounded-[25px] text-[13px] backdrop:blur-[2px]">
+              Get started
+            </p>
+
+            <h2 className="text-black font-[650] text-[1rem] md:text-[1.4rem] my-[20px] flex flex-row gap-x-3">
+              Start using the wewash application.
+            </h2>
+          </Fade>
+          <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3"></div>
         </div>
       </section>
       <Footer />

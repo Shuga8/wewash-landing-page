@@ -58,10 +58,10 @@ const About = () => {
 
   return (
     <>
-      <Fade cascade triggerOnce={true}>
-        <div className="w-full py-10 base:py-14 md:py-20 px-6 base:px-12 md:px-24 block">
-          <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-10 lg:justify-between mb-10">
-            <div className="block">
+      <div className="w-full py-10 base:py-14 md:py-20 px-6 base:px-12 md:px-24 block">
+        <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-10 lg:justify-between mb-10">
+          <div className="block">
+            <Fade cascade triggerOnce={true}>
               <p className="text-center w-fit px-4 py-[4px] text-orange-600 bg-black bg-opacity-10 font-[650] rounded-lg text-[13px] backdrop:blur-[2px]">
                 For Washers
               </p>
@@ -127,20 +127,24 @@ const About = () => {
               >
                 Learn More
               </Link>
-            </div>
+            </Fade>
+          </div>
 
-            <div className="block h-full">
+          <div className="block h-full">
+            <Fade cascade triggerOnce={true}>
               <img
                 src={wash_one}
                 alt=""
                 className="w-full h-full object-fill"
                 fetchpriority="high"
               />
-            </div>
+            </Fade>
           </div>
+        </div>
 
-          <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-10 lg:justify-between">
-            <div className="block">
+        <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-10 lg:justify-between">
+          <div className="block">
+            <Fade cascade triggerOnce={true}>
               <p className="text-center w-fit px-4 py-[4px] text-orange-600 bg-black bg-opacity-10 font-[650] rounded-lg text-[13px] backdrop:blur-[2px]">
                 For Individuals
               </p>
@@ -205,19 +209,21 @@ const About = () => {
               >
                 Learn More
               </Link>
-            </div>
+            </Fade>
+          </div>
 
-            <div className="block h-full">
+          <div className="block h-full">
+            <Fade cascade triggerOnce={true}>
               <img
                 src={wash_two}
                 alt=""
                 className="w-full h-full object-fill"
                 fetchpriority="high"
               />
-            </div>
+            </Fade>
           </div>
         </div>
-      </Fade>
+      </div>
 
       <section className="products bg-[#0A0A0A] w-full py-10 base:py-14 md:py-20 px-6 base:px-12 md:px-24">
         <Fade cascade triggerOnce={true}>
@@ -290,15 +296,19 @@ const About = () => {
             </div>
 
             <div className="flex h-full justify-center items-center drop-shadow-md">
-              <img
-                src={dashboard_slant}
-                alt=""
-                className="w-full h-full object-contain"
-                fetchpriority="high"
-              />
+              <Fade cascade triggerOnce={true}>
+                <img
+                  src={dashboard_slant}
+                  alt=""
+                  className="w-full h-full object-contain"
+                  fetchpriority="high"
+                />
+              </Fade>
             </div>
           </div>
+        </Fade>
 
+        <Fade cascade triggerOnce={true}>
           <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-y-10 gap-x-24 lg:justify-between mb-10">
             <div className="block">
               <p className="text-center w-fit px-4 py-[4px] text-purple-600 bg-white bg-opacity-10 font-[650] rounded-lg text-[13px] backdrop:blur-[2px]">
