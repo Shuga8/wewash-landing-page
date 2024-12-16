@@ -151,6 +151,10 @@ header.scrolled {
   scroll-snap-align: start;
 }
 
+.dropper {
+  filter: drop-shadow(1px 1px 3px #bc82fb);
+}
+
 @keyframes scroll {
   to {
     transform: translateX(calc(-100% - 96px));

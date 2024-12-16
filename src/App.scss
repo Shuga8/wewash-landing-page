@@ -178,6 +178,10 @@ header {
     scroll-snap-align: start;
   }
 }
+
+.dropper {
+  filter: drop-shadow(1px 1px 3px #bc82fb);
+}
 @media (max-width: 640px) {
 }
 
