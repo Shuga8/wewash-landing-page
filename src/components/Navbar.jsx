@@ -20,6 +20,10 @@ const Navbar = () => {
   const handleAnchorClick = (e, targetId) => {
     e.preventDefault();
 
+    if (window.location.pathname == "/") {
+      window.location.href = "/";
+    }
+
     const target = document.getElementById(targetId);
     if (target) {
       target.scrollIntoView({ behavior: "smooth" });
