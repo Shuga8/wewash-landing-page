@@ -10,11 +10,11 @@ const Product = () => {
   return (
     <>
       <Navbar />
-      <section className="products hero w-full h-[200dvh] relative">
-        <div className="absolute w-[100vw] h-[200dvh] z-[2] top-0 left-0 earth-3d">
+      <section className="products hero w-full h-[100dvh] md:h-[145dvh] relative">
+        <div className="absolute w-[100vw] h-[100dvh] md:h-[145dvh] z-[2] top-0 left-0 earth-3d">
           <StarsLayout />
         </div>
-        <div className="content w-full h-[150dvh] flex justify-center flex-col gap-y-8 text-wrap px-12 base:px-32 xl:px-48 py-3 absolute z-[10]">
+        <div className="content w-full h-[100dvh] md:h-[145dvh] flex justify-center flex-col gap-y-8 text-wrap px-12 base:px-32 xl:px-48 py-3 absolute z-[10]">
           <Fade cascade triggerOnce={true}>
             <h3 className="w-fit px-3 py-2 flex flex-row gap-x-1 place-items-center bg-white bg-opacity-5 text-center text-white rounded-[25px] text-[13px] font-[550] border-white border border-opacity-15">
               <CiMobile3 className="text-[18px]" />

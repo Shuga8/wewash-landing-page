@@ -54,7 +54,7 @@ const StarsLayout = () => {
 
   return (
     <>
-      <div className="relative min-w-[100vw] h-[200vh]">
+      <div className="relative min-w-[100vw] h-[100vh] md:h-[145dvh]">
         <div
           className="w-[100%] h-[100%] absolute z-[2] top-0 left-0"
           id="map"

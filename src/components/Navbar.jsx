@@ -20,8 +20,8 @@ const Navbar = () => {
   const handleAnchorClick = (e, targetId) => {
     e.preventDefault();
 
-    if (window.location.pathname == "/") {
-      window.location.href = "/";
+    if (window.location.pathname !== "/") {
+      window.location.href = "/#about";
     }
 
     const target = document.getElementById(targetId);
@@ -111,6 +111,7 @@ const Navbar = () => {
             className={`text-[15px] font-[650] hover:text-primary-500 ${
               isScrolled ? "text-primary-600" : "text-white"
             }`}
+            onClick={(e) => handleAnchorClick(e, "about")}
           >
             About
           </a>
