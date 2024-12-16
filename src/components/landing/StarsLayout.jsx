@@ -32,8 +32,23 @@ const StarsLayout = () => {
     }
     animate();
 
+    function handleWindowResize() {
+      const { width, height } = mapDiv.getBoundingClientRect();
+      camera.aspect = width / height;
+      camera.updateProjectionMatrix();
+      renderer.setSize(width, height);
+
+      if (window.matchMedia("(max-width: 600px)").matches) {
+        camera.position.z = 3.3;
+      } else {
+        camera.position.z = 2.5;
+      }
+    }
+    window.addEventListener("resize", handleWindowResize);
+
     return () => {
       mapDiv.removeChild(renderer.domElement);
+      window.removeEventListener("resize", handleWindowResize);
     };
   }, []);
 
