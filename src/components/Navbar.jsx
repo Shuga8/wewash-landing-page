@@ -40,6 +40,16 @@ const Navbar = () => {
   };
 
   useEffect(() => {
+    const hash = window.location.hash; // Get the current hash from the URL
+    if (hash === "#about") {
+      const target = document.getElementById("about");
+      if (target) {
+        target.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  }, []);
+
+  useEffect(() => {
     window.addEventListener("scroll", handleScroll);
 
     return () => {
@@ -93,11 +103,10 @@ const Navbar = () => {
           </Link>
 
           <a
-            href="#about"
+            href="/#about"
             className={`text-[15px] font-[650] hover:text-primary-500 ${
               isScrolled ? "text-primary-600" : "text-white"
             }`}
-            onClick={(e) => handleAnchorClick(e, "about")}
           >
             About
           </a>
