@@ -1,5 +1,5 @@
 import React from "react";
-import Navbar from "./Navbar";
+import { Footer, Navbar } from "./index";
 import StarsLayout from "./landing/StarsLayout";
 
 const Product = () => {
@@ -12,6 +12,7 @@ const Product = () => {
         </div>
         <div className="content w-full h-full flex justify-center items-center flex-col gap-y-8 text-wrap px-12 base:px-32 xl:px-48 py-3 absolute z-[10]"></div>
       </section>
+      <Footer />
     </>
   );
 };
