@@ -2,19 +2,23 @@ import React from "react";
 import { Footer, Navbar } from "./index";
 import StarsLayout from "./landing/StarsLayout";
 import { CiMobile3 } from "react-icons/ci";
+import { GoDotFill } from "react-icons/go";
 import { Fade } from "react-awesome-reveal";
 import { Link } from "react-router-dom";
 import dashboard_slant from "../assets/Dashboard-14-Iphone-Pro-MockupA-.png";
+import signup_img from "../../public/Signing_in_2.png";
+import confirm_img from "../../public/Signing_in_3.png";
+import detail_img from "../../public/Signing_in_5.png";
 
 const Product = () => {
   return (
     <>
       <Navbar />
-      <section className="products hero w-full h-[100dvh] md:h-[145dvh] relative">
-        <div className="absolute w-[100vw] h-[100dvh] md:h-[145dvh] z-[2] top-0 left-0 earth-3d">
+      <section className="products hero w-full h-[130dvh] md:h-[145dvh] relative">
+        <div className="absolute w-full h-[130dvh] md:h-[145dvh] z-[2] top-0 left-0 earth-3d">
           <StarsLayout />
         </div>
-        <div className="content w-full h-[100dvh] md:h-[145dvh] flex justify-center flex-col gap-y-8 text-wrap px-8 base:px-11 lg:px-16 xl:px-24  py-3 absolute z-[10]">
+        <div className="content w-full h-[130dvh] md:h-[145dvh] flex justify-center flex-col gap-y-8 text-wrap px-8 base:px-11 lg:px-16 xl:px-24  py-3 absolute z-[10]">
           <Fade cascade triggerOnce={true}>
             <h3 className="w-fit px-3 py-2 flex flex-row gap-x-1 place-items-center bg-white bg-opacity-5 text-center text-white rounded-[25px] text-[13px] font-[550] border-white border border-opacity-15">
               <CiMobile3 className="text-[18px]" />
@@ -48,7 +52,7 @@ const Product = () => {
               <img
                 src={dashboard_slant}
                 alt=""
-                className="w-[700px] max-w-[95%] object-cover ml-0 md:ml-[-400px]"
+                className="w-[700px] max-w-[95%] object-cover ml-0 md:ml-[-500px]"
                 fetchpriority="high"
               />
             </div>
@@ -63,11 +67,54 @@ const Product = () => {
               Get started
             </p>
 
-            <h2 className="text-black font-[650] text-[1rem] md:text-[1.4rem] my-[20px] flex flex-row gap-x-3">
-              Start using the wewash application.
+            <h2 className="text-cyan-700 font-[650] text-[1rem] md:text-[1.4rem] my-[20px] flex flex-row gap-x-3 mb-5">
+              Start using the wewash application by registering.
             </h2>
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-x-5 gap-y-4">
+              <div className="h-96 rounded-[15px] overflow-hidden bg-opacity-5 bg-white relative shadow-[1px_1px_3px_#aaa,_-1px_-1px_3px_#bbb] px-3 py-4">
+                <img
+                  src={signup_img}
+                  alt=""
+                  className="w-full object-scale-down"
+                />
+                <div className="absolute w-full h-[20%] bg-cyan-600 bottom-0 left-0 bg-opacity-80 backdrop-blur-sm flex flex-row gap-x-2 place-items-center px-4 py-3 place-content-center">
+                  <GoDotFill className="text-white text-[15px]" />
+                  <span className="text-white text-[14px]">
+                    Register with your phone number.
+                  </span>
+                </div>
+              </div>
+
+              <div className="h-96 rounded-[15px] overflow-hidden bg-opacity-5 bg-white relative shadow-[1px_1px_3px_#aaa,_-1px_-1px_3px_#bbb] px-3 py-4">
+                <img
+                  src={confirm_img}
+                  alt=""
+                  className="w-full object-scale-down"
+                />
+                <div className="absolute w-full h-[20%] bg-cyan-600 bottom-0 left-0 bg-opacity-80 backdrop-blur-sm flex flex-row gap-x-2 place-items-center px-4 py-3 place-content-center">
+                  <GoDotFill className="text-white text-[15px]" />
+                  <span className="text-white text-[14px]">
+                    Verify your phone number.
+                  </span>
+                </div>
+              </div>
+
+              <div className="h-96 rounded-[15px] overflow-hidden bg-opacity-5 bg-white relative shadow-[1px_1px_3px_#aaa,_-1px_-1px_3px_#bbb] px-3 py-4">
+                <img
+                  src={detail_img}
+                  alt=""
+                  className="w-full object-scale-down"
+                />
+                <div className="absolute w-full h-[20%] bg-cyan-600 bottom-0 left-0 bg-opacity-80 backdrop-blur-sm flex flex-row gap-x-2 place-items-center px-4 py-3 place-content-center">
+                  <GoDotFill className="text-white text-[15px]" />
+                  <span className="text-white text-[14px]">
+                    Add your details.
+                  </span>
+                </div>
+              </div>
+            </div>
           </Fade>
-          <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3"></div>
         </div>
       </section>
       <Footer />
